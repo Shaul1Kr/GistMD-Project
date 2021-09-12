@@ -1,7 +1,6 @@
 import axios from 'axios';
-
-const url = 'http://localhost:5000/';
-
-export const fetchPatients = () => axios.get(url);
-export const creatPatient = (newPatient) => axios.post(url, newPatient);
-export const deletePatient = (id) => axios.delete(`${url}${id}`);
+import * as constant from '../utils/const';
+// Making api calls
+export const fetchPatients = () => axios.get(constant.URL);
+export const creatPatient = (newPatient) => axios.post(constant.URL, newPatient);
+export const deletePatient = (id) => axios.delete(`${constant.URL}${id}`);

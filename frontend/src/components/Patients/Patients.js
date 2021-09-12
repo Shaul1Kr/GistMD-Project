@@ -11,13 +11,13 @@ const Patients = () => {
   const classes = useStyles();
 
   return !patients.length ? (
-    <h1>No patients</h1>
+    <h1 align="center">No patients</h1>
   ) : (
     <Grid
       className={classes.container}
       container
       alignItems="stretch"
-      spacing={3} 
+      spacing={5} 
     >
       {patients.map((patient) => (
         <Grid key={patient._id}  item >

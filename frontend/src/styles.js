@@ -3,7 +3,6 @@ import { makeStyles } from '@material-ui/core/styles';
 export default makeStyles((theme) => ({
   appBar: {
     borderRadius: 15,
-    margin: '30px 0',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
@@ -13,7 +12,7 @@ export default makeStyles((theme) => ({
     color: 'rgba(0,183,255, 1)',
   },
   image: {
-    marginLeft: '15px',
+    marginLeft: '15%',
   },
   root: {
     '& .MuiTextField-root': {
@@ -22,7 +21,13 @@ export default makeStyles((theme) => ({
     '& .MuiPaper-root': {
       backgroundColor: 'rgb(240 43 78);',
     },
-    
+  },
+  grid: {
+    '& .MuiGrid-container': {
+      position: 'absolute',
+      top: '30%',
+      left: '25%',
+    },
   },
   paper: {
     padding: theme.spacing(2),
@@ -34,9 +39,15 @@ export default makeStyles((theme) => ({
   },
   fileInput: {
     width: '97%',
-    margin: '10px 0',
+    margin: '10% 0',
   },
   buttonSubmit: {
     marginBottom: 10,
+  },
+  addPatient: {
+    margin: 'auto',
+    marginTop: '5%',
+    width: '20%',
+    display: 'block'
   },
 }));

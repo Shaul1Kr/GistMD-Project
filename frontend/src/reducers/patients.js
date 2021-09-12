@@ -1,3 +1,4 @@
+//Making dispatch
 export default (patients = [], action) => {
   switch (action.type) {
     case "DELETE":

@@ -1,37 +1,38 @@
 import mongoose from "mongoose";
 import PatientsData from "../models/paitentsData.js";
 
-export const getPatients = async (req, res) => {
+// Get all patients from DB
+export const getPatients = async (request, result) => {
   try {
     const patientsData = await PatientsData.find();
 
-    res.status(200).json(patientsData);
+    result.status(200).json(patientsData);
   } catch (error) {
-    res.status(404).json({ message: error.message });
+    result.status(404).json({ message: error.message });
   }
 };
-
-export const createPatient = async (req, res) => {
-  const patient = req.body;
+// Create new patients and save in DB
+export const createPatient = async (request, result) => {
+  const patient = request.body;
 
   const newPatient = new PatientsData(patient);
 
   try {
     await newPatient.save();
 
-    res.status(201).json(newPatient);
+    result.status(201).json(newPatient);
   } catch (error) {
-    res.status(409).json({ message: error.message });
+    result.status(409).json({ message: error.message });
   }
 };
-
-export const deletePatient = async (req, res) => {
-  const { id } = req.params;
+// Delete a specific patient from DB
+export const deletePatient = async (request, result) => {
+  const { id } = request.params;
   if (!mongoose.Types.ObjectId.isValid(id)) {
-    return res.status(404).send(`No patient with id: ${id}`);
+    return result.status(404).send(`No patient with id: ${id}`);
   }
 
   await PatientsData.findByIdAndRemove(id);
 
-  res.json({ message: "Patient deleted successfully." });
+  result.json({ message: "Patient deleted successfully." });
 };
