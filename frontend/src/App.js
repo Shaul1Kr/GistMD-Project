@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { AppBar, Grid, IconButton } from "@material-ui/core";
 import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
 import { useDispatch } from "react-redux";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import GistMD from "./static/images/GistMDI.png";
 
 import { getPatients } from "./actions/patients";
@@ -25,10 +25,13 @@ const App = () => {
       <Switch>
         <Route exact path="/">
           <Grid>
-            <IconButton className={classes.addPatient} href="/form">
-              Add new patient
+            
+            <Link to="/form" className={classes.link}>
+            <IconButton className={classes.addPatient}>
               <AddCircleOutlineIcon fontSize="large" />
+              Add new patient
             </IconButton>
+            </Link>
           </Grid>
           <Grid>
             <Patients />

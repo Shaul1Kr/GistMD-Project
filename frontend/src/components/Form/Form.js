@@ -24,6 +24,7 @@ import {
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import ClearIcon from "@material-ui/icons/Clear";
+import { Link } from "react-router-dom";
 
 import useStyles from "./styles";
 import { creatPatient } from "../../actions/patients";
@@ -136,9 +137,11 @@ const Form = () => {
               <Button onClick={handleClose} color="primary">
                 No
               </Button>
-              <Button href="/" color="primary" autoFocus>
-                Yes
-              </Button>
+              <Link to="/" className={classes.link}>
+                <Button color="primary" autoFocus>
+                  Yes
+                </Button>
+              </Link>
             </DialogActions>
           </Dialog>
           <Typography className={classes.typography} variant="h6">

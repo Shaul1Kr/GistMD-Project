@@ -47,4 +47,7 @@ export default makeStyles((theme) => ({
     display: "inline",
     paddingRight: "77%",
   },
+  link: {
+    textDecoration: 'auto',
+  }
 }));

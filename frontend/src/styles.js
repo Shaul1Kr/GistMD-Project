@@ -50,4 +50,8 @@ export default makeStyles((theme) => ({
     width: '20%',
     display: 'block'
   },
+  link: {
+    textDecoration: 'auto',
+    display: 'contents',
+  }
 }));
