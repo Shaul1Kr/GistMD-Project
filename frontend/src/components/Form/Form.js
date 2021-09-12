@@ -45,7 +45,6 @@ const Form = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(activeStep);
     dispatch(creatPatient(patientData));
     setPatientData({
       name: "",
@@ -90,7 +89,6 @@ const Form = () => {
       e.target.value.length >= constant.RANGE.MIN_LENGTH &&
       e.target.value.length <= constant.RANGE.MAX_LENGTH
     ) {
-      console.log(e.target.value.length)
       setPatientData((prevState) => {
         return { ...prevState, disable: false };
       });
